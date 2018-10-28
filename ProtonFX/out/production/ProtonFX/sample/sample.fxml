@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="600.0" prefWidth="424.0" style="-fx-background-color: #272728;">
+         <children>
+            <Ellipse fill="#272728" layoutX="197.0" layoutY="41.0" radiusX="15.0" radiusY="15.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="30.0" layoutX="194.0" layoutY="53.0" stroke="WHITE" strokeType="INSIDE" width="7.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="9.0" layoutX="152.0" layoutY="34.0" stroke="WHITE" strokeType="INSIDE" width="30.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="9.0" layoutX="214.0" layoutY="34.0" stroke="WHITE" strokeType="INSIDE" width="30.0" />
+            <JFXSlider fx:id="powerslider" layoutX="163.0" layoutY="215.0" orientation="VERTICAL" prefWidth="51.0" rotate="90.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcfcfc" height="23.0" layoutX="46.0" layoutY="273.0" stroke="WHITE" strokeLineCap="BUTT" strokeType="INSIDE" strokeWidth="8.0" width="7.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcfcfc" height="37.0" layoutX="60.0" layoutY="259.0" stroke="WHITE" strokeLineCap="BUTT" strokeType="INSIDE" strokeWidth="8.0" width="7.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcfcfc" height="23.0" layoutX="74.0" layoutY="273.0" stroke="WHITE" strokeLineCap="BUTT" strokeType="INSIDE" strokeWidth="8.0" width="7.0" />
+            <Label layoutX="43.0" layoutY="315.0" text=".url" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Black" size="19.0" />
+               </font>
+            </Label>
+            <JFXToggleButton fx:id="masksIP" layoutX="146.0" layoutY="106.0" mnemonicParsing="false" onAction="#togglesMaskIP" text="IP Mask" textFill="WHITE" toggleColor="#d0311c" toggleLineColor="#bf4b37" unToggleColor="#948989" unToggleLineColor="#797474">
+               <font>
+                  <Font name="Open Sans" size="12.0" />
+               </font>
+            </JFXToggleButton>
+            <JFXToggleButton fx:id="pingtype" layoutX="35.0" layoutY="186.0" mnemonicParsing="false" onAction="#PingTypeToggle" text="Ping-Type" textFill="WHITE">
+               <font>
+                  <Font name="Open Sans" size="12.0" />
+               </font>
+            </JFXToggleButton>
+            <JFXToggleButton fx:id="singlepacket" layoutX="188.0" layoutY="148.0" mnemonicParsing="false" onAction="#SingleTypeToggle" text="Single-Packet Type" textFill="WHITE">
+               <font>
+                  <Font name="Open Sans" size="12.0" />
+               </font>
+            </JFXToggleButton>
+            <JFXToggleButton fx:id="bufferexploit" layoutX="188.0" layoutY="186.0" mnemonicParsing="false" onAction="#BufferExploitToggle" text="Buffer Exploit" textFill="WHITE" unToggleLineColor="#b8b3b3">
+               <font>
+                  <Font name="Open Sans" size="12.0" />
+               </font>
+            </JFXToggleButton>
+            <JFXTextField fx:id="urlField" focusColor="#272728" layoutX="84.0" layoutY="316.0" prefHeight="25.0" prefWidth="208.0" promptText="Complete..." style="-fx-background-color: #FFFFFF;" unFocusColor="#272728">
+               <font>
+                  <Font name="Roboto Medium" size="12.0" />
+               </font></JFXTextField>
+            <JFXButton fx:id="startb" buttonType="RAISED" layoutX="84.0" layoutY="526.0" mnemonicParsing="false" onAction="#StartAllSpecifiedProcesses" prefHeight="37.0" prefWidth="86.0" style="-fx-background-color: #FFFFFF;" text="START">
+               <font>
+                  <Font name="Open Sans Semibold" size="11.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="abortb" buttonType="RAISED" layoutX="227.0" layoutY="526.0" mnemonicParsing="false" onAction="#AbortsAllProcesses" prefHeight="37.0" prefWidth="86.0" style="-fx-background-color: #FFFFFF;" text="ABORT">
+               <font>
+                  <Font name="Open Sans Semibold" size="11.0" />
+               </font>
+            </JFXButton>
+            <JFXDialog layoutX="45.0" layoutY="241.0" prefHeight="150.0" prefWidth="289.0" />
+            <Label layoutX="43.0" layoutY="357.0" text="stat" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Black" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="96.0" layoutY="357.0" prefHeight="26.0" prefWidth="201.0" text="no processes yet..." textFill="WHITE">
+               <font>
+                  <Font name="Roboto Medium" size="16.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="detailDisplay" editable="false" layoutX="22.0" layoutY="393.0" prefHeight="122.0" prefWidth="378.0" />
+            <JFXToggleButton fx:id="udp" layoutX="35.0" layoutY="148.0" mnemonicParsing="false" onAction="#UDPProtocolToggle" text="UDP" textFill="WHITE">
+               <font>
+                  <Font name="Open Sans" size="12.0" />
+               </font>
+            </JFXToggleButton>
+         </children>
+      </Pane>
+   </children>
+</GridPane>
